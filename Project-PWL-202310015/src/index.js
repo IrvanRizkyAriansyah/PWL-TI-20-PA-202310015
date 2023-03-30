@@ -7,9 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 import FormPersonalData from "./components/tugas1/FormPersonalData";
 import Widget1 from "./components/tugas2/Widget1";
 import FormPersonalDataMultiple from "./components/tugas2/FormPersonalDataMultiple";
-import Layout from "./components/pertemuan3/layouts/Layout";
-import Homes from "./components/pertemuan3/modules/Homes/Homes";
-import AppRoute from "./components/pertemuan3/apps/AppRoute";
+import Layout from "./components/latihan-3-1/layouts/Layout";
+import Homes from "./components/latihan-3-1/modules/Homes/Homes";
+import AppRoute from "./components/latihan-3-1/apps/AppRoute";
 import { BrowserRouter } from "react-router-dom";
 
 const { PUBLIC_URL } = process.env;
