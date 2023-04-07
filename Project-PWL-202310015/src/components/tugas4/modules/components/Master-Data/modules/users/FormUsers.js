@@ -16,28 +16,20 @@ export function FormUsers(props) {
 
   const submitForm = (e) => {
     e.preventDefault();
-    // console.log(postData)
-    
-    const config = {
-      method: "POST",
-      url: "http://localhost:8080/api/students",
-      headers: { "Content-Type": "application/json" },
-      data: postData,
-    };
-    axios
-      .request(config)
-      .then((response) => {
-        let results = response.data.data;
+    try {
+      axios.post('http://localhost:8080/api/students', postData).then((res) => {
+      let results = res.data;
+      console.log(results)
         if (results) {
           openModal({ header: "Info", message: "Successfully submited" });
           props.getUser();
         } else {
           openModal({ header: "Error", message: "Failed submit" });
         }
-      })
-      .catch((error) => {
-        openModal({ header: "Error", message: error.error });
-      });
+    })
+    } catch (error) {
+      openModal({ header: "Error", message: error.error });
+    }
   };
 
   return (
@@ -79,7 +71,7 @@ export function FormUsers(props) {
               className="form-control"
               defaultValue={postData.middlename}
               onChange={(e) =>
-                setPostData({ ...postData, firstname: e.target.value })
+                setPostData({ ...postData, middlename: e.target.value })
               }
             />
           </div>
@@ -91,7 +83,7 @@ export function FormUsers(props) {
               className="form-control"
               defaultValue={postData.lastname}
               onChange={(e) =>
-                setPostData({ ...postData, firstname: e.target.value })
+                setPostData({ ...postData, lastname: e.target.value })
               }
             />
           </div>
@@ -119,26 +111,6 @@ export function FormUsers(props) {
                 setPostData({ ...postData, email: e.target.value })
               }
             />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Program</label>
-            <select class="form-select" aria-label="Default select example" 
-              onChange={(e) =>
-                  setPostData({ ...postData, programs: {id: e.target.value} })
-                }
-            >
-              <option value="1">S1</option>
-            </select>
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Program Study</label>
-            <select class="form-select" aria-label="Default select example" 
-              onChange={(e) =>
-                  setPostData({ ...postData, programStudy: {id: e.target.value} })
-                }
-            >
-              <option value="1">TI</option>
-            </select>
           </div>
 
           <div className="text-end mt-3">
