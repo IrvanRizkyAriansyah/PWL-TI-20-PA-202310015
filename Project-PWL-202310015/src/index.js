@@ -9,7 +9,8 @@ import Widget1 from "./components/tugas2/Widget1";
 import FormPersonalDataMultiple from "./components/tugas2/FormPersonalDataMultiple";
 import Layout from "./components/latihan-3-1/layouts/Layout";
 import Homes from "./components/latihan-3-1/modules/Homes/Homes";
-import AppRoute from "./components/latihan-3-1/apps/AppRoute";
+// import AppRoute from "./components/latihan-3-1/apps/AppRoute";
+import AppRoute from "./components/tugas4/apps/routes/AppRoute";
 import { BrowserRouter } from "react-router-dom";
 
 const { PUBLIC_URL } = process.env;
